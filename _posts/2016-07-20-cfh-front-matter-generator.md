@@ -1,7 +1,6 @@
 ---
-layout: page
+layout: post
 title: CfH Front Matter
-permalink: /cfh-fm-generator/
 ---
 <script src="_scripts/cfh-front-matter.js"></script>
 
@@ -12,3 +11,7 @@ permalink: /cfh-fm-generator/
 	<input type="date" name="date" id="date">
 	<input type="submit" value="Submit">
 </form>
+
+<hr>
+
+blah blah words and stuff
