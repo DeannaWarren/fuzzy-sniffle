@@ -17,3 +17,5 @@ github_username:  deannawarren
 
 # Build settings
 markdown: kramdown
+
+exclude: ['config.ru', 'Gemfile', 'Gemfile.lock', 'vendor']
