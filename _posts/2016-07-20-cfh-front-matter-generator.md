@@ -2,7 +2,7 @@
 layout: post
 title: CfH Front Matter
 ---
-<script src="_scripts/cfh-front-matter.js"></script>
+<script src="scripts/cfh-front-matter.js"></script>
 
 <form>
 	<label for="title"> Title: </label>
