@@ -19,13 +19,13 @@ var displayFrontMatter = function(event){
   var newline = "<br>";
   var layout = "layout: post";
   var titleFormat = "title: " + title;
-  // date is set above
+  var dateFormat = "date: " + date;
   var category = "categories: blogs";
   var image = "image: \"/img/" + date + "-" + linkedTitle + ".png\"";
   var postUrl = "url: \"" + link + "\"";
   var bufferFeed = "buffer: \"" + title + " - Craig Warren " + link + "\"";
 
-  var copyValue = [wrapper, newline, layout, newline, titleFormat, newline, date, newline, category, newline, image, newline, postUrl, newline, bufferFeed, newline, wrapper].join("");
+  var copyValue = [wrapper, newline, layout, newline, titleFormat, newline, dateFormat, newline, category, newline, image, newline, postUrl, newline, bufferFeed, newline, wrapper].join("");
 
   $("#copy-text").attr("value", copyValue);
   $("#preview").html(copyValue)
