@@ -32,10 +32,12 @@ The current functionality requires only the planned release date and the title, 
 UPDATE 9/8:
 
 The problems I've seen or had:
+
 * copy/paste functionality broken, sometimes leading to broken files due to non-tech business partner missing small syntax that is crucial 
 * More categories than strictly nessecary, for example the image file needs a direct reference, but there is nowhere on the page that needs the actual url or buffer information, so some of those could be placed under a single entry.
 
 More to the point, I have a few reasons I'm ready to update:
+
 *  the Jekyll folder has become unwieldy after a number of posts and requires further organization. However this requires me to change the front matter as well. 
 *  I would like to create a cleaner OOP version of the tool so that the JQuery portion is clean. 
 
