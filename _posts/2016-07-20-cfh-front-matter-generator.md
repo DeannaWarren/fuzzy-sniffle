@@ -41,4 +41,4 @@ More to the point, I have a few reasons I'm ready to update:
 *  the Jekyll folder has become unwieldy after a number of posts and requires further organization. However this requires me to change the front matter as well. 
 *  I would like to create a cleaner OOP version of the tool so that the JQuery portion is clean. 
 
-<script src="/scripts/cfh-front-matter.js"></script>
+<script src="/scripts/cfh-front-matter-v1.js"></script>
