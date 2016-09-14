@@ -1,18 +1,3 @@
-
-function Post(title,date){
-  this.title = title;
-  this.date = date;
-
-
-
-
-
-  // this.tagLine = this.title + " - Craig Warren";
-  // this.buffer = this.tagLine + " " + link;
-};
-
-// !!! JQuery below !!!
-
 $(document).ready(function() {
   bindListeners();
 });
@@ -23,8 +8,16 @@ var bindListeners = function(){
 
 var displayFrontMatter = function(event){
   event.preventDefault();
+  
   var title = $('form input[name=title]').val();
   var date= $('form input[name=date]').val();
+  
+  var data = formatFrontMatter(title,date);
+  
+  $("#preview").html(data);
+};
+
+var formatFrontMatter = function(title,date){
 
   var linkedDate = date.split("-").join("/");
   var dateYear = date.split("-")[0];
@@ -38,7 +31,8 @@ var displayFrontMatter = function(event){
 
   var frontMatterAndMeta = (
     "--- ",
-    "\nlayout: post \ntitle: ", title, 
+    "\nlayout: post",
+    "\ntitle: ", title, 
     "\ndate: ", date, 
     "\categories: blogs", 
     "\nimage: ", imageFile, 
@@ -51,7 +45,7 @@ var displayFrontMatter = function(event){
     " \n\t\t1. Be in Jubilant Fortnight root with a clean git status (check for updates from github)",
     "\n\t\t2. >> \"mkdir -p _posts/", dateYear, "-", dateMonth," && touch ", postFile,
     "\n\t\t3. Copy above front matter and post body into the file.",
-    "\n\t\t4. Generate Pablo image and upload it to Buffer using above text as appropriate. Download file (next command on current mac setep only)",
+    "\n\t\t4. Generate Pablo image and upload it to Buffer using above text as appropriate. Download file",
     "\n\n\t5. >> \"mkdir -p img/blog/", dateYear, "-",dateMonth, " && mv ../../../../Downloads/pablo.png ", imageFile, "\"",
     "\n\t\t6. Make sure no one is watching to cringe at you and >> \"git add . && git commit -m \"Add ", date, " blog and image\" && git push origin master && git push heroku\"",
     "\n\t\t7. Pop some champagne, another post uploaded with little to no effort at all.",
