@@ -1,3 +1,5 @@
+
+
 $(document).ready(function() {
   bindListeners();
 });
@@ -14,19 +16,20 @@ var displayFrontMatter = function(event){
   
   var data = formatFrontMatter(title,date);
   
-  $("#preview").html(data);
+  $("#view").html(data);
 };
 
 var formatFrontMatter = function(title,date){
 
   var linkedDate = date.split("-").join("/");
+  var linkedTitle = title.toLowerCase().split(" ").join("-")
   var dateYear = date.split("-")[0];
   var dateMonth = date.split("-")[1];
 
-  var fileName = date + "-" + title.toLowerCase().split(" ").join("-");
-  var tagLine = post.title + " - Craig Warren"
-  var imageFile = "img/blog/" + fileName ".png";
-  var postFile = "_posts/" + post.dateYear + "-" + post.dateMonth + "/" + fileName + ".md"
+  var fileName = date + "-" + linkedTitle;
+  var tagline = title + " - Craig Warren"
+  var imageFile = "img/blog/" + dateYear + "-" + dateMonth + "/" + fileName + ".png";
+  var postFile = "_posts/" + dateYear + "-" + dateMonth + "/" + fileName + ".md"
   var link = "http://www.copywritingforhealthcare.com/blogs/" + linkedDate + "/" + linkedTitle + ".html";
 
   var frontMatterAndMeta = (
@@ -49,7 +52,7 @@ var formatFrontMatter = function(title,date){
     "\n\n\t5. >> \"mkdir -p img/blog/", dateYear, "-",dateMonth, " && mv ../../../../Downloads/pablo.png ", imageFile, "\"",
     "\n\t\t6. Make sure no one is watching to cringe at you and >> \"git add . && git commit -m \"Add ", date, " blog and image\" && git push origin master && git push heroku\"",
     "\n\t\t7. Pop some champagne, another post uploaded with little to no effort at all.",
-    "\n}").join()
+    "\n}").join();
     
     return frontMatterAndMeta;
 };

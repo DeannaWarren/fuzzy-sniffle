@@ -14,7 +14,7 @@ categories: tools
 	<input type="submit" value="Submit">
 </form>
 
-<p id="preview"></p>
+<p id="view"></p>
 
 <hr>
 
