@@ -23,6 +23,8 @@ var formatFrontMatter = function(title, date) {
   var linkedTitle = title.toLowerCase().split(" ").join("-");
   var dateYear = date.split("-")[0];
   var dateMonth = date.split("-")[1];
+  
+  var newline = "<br>";
 
   var fileName = date + "-" + linkedTitle;
   var tagline = title + " - Craig Warren";
@@ -32,25 +34,26 @@ var formatFrontMatter = function(title, date) {
 
   var frontMatterAndMeta = [
     "--- ",
-    "\nlayout: post",
-    "\ntitle: ", title,
-    "\ndate: ", date,
-    "\ncategories: blogs",
-    "\nimage: ", imageFile,
-    "\n---",
-    "\n\nmeta:",
-    "{\n\tURL: ", link,
-    "\n\tPABLO: ", tagline,
-    "\n\tBUFFER: ", tagline, " ", link,
-    "\n\tTERRIBLE GIT WORKFLOW DON'T LOOK AT ME:",
-    " \n\t\t1. Be in Jubilant Fortnight root with a clean git status (check for updates from github)",
-    "\n\t\t2. >> mkdir -p _posts/", dateYear, "-", dateMonth, " && touch ", postFile,
-    "\n\t\t3. Copy above front matter and post body into the file.",
-    "\n\t\t4. Generate Pablo image and upload it to Buffer using above text as appropriate. Download file",
-    "\n\t\t5. >> mkdir -p img/blog/", dateYear, "-", dateMonth, " && mv ../../../../Downloads/pablo.png ", imageFile,
-    "\n\t\t6. Make sure no one is watching to cringe at you and >> git add . && git commit -m \"Add ", date, " blog and image\" && git push origin master && git push heroku",
-    "\n\t\t7. Pop some champagne, another post uploaded with little to no effort at all.",
-    "\n}"
+    newline, "layout: post",
+    newline, "title: ", title,
+    newline, "date: ", date,
+    newline, "categories: blogs",
+    newline, "image: ", imageFile,
+    newline, "---",
+    newline, newline, "meta:",
+    "{",
+    newline, "URL: ", link,
+    newline, "PABLO: ", tagline,
+    newline, "BUFFER: ", tagline, " ", link,
+    newline, "TERRIBLE GIT WORKFLOW DON'T LOOK AT ME:",
+    newline, "1. Be in Jubilant Fortnight root with a clean git status (check for updates from github)",
+    newline, "2. >> mkdir -p _posts/", dateYear, "-", dateMonth, " && touch ", postFile,
+    newline, "3. Copy above front matter and post body into the file.",
+    newline, "4. Generate Pablo image and upload it to Buffer using above text as appropriate. Download file",
+    newline, "5. >> mkdir -p img/blog/", dateYear, "-", dateMonth, " && mv ../../../../Downloads/pablo.png ", imageFile,
+    newline, "6. Make sure no one is watching to cringe at you and >> git add . && git commit -m \"Add ", date, " blog and image\" && git push origin master && git push heroku",
+    newline, "7. Pop some champagne, another post uploaded with little to no effort at all.",
+    newline,"}"
     ].join("");
 
   return frontMatterAndMeta;
