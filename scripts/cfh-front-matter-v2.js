@@ -28,7 +28,7 @@ var formatFrontMatter = function(title, date) {
 
   var fileName = date + "-" + linkedTitle;
   var tagline = title + " - Craig Warren";
-  var imageFile = "/img/blog/" + dateYear + "-" + dateMonth + "/" + fileName + ".png";
+  var imageFile = "img/blog/" + dateYear + "-" + dateMonth + "/" + fileName + ".png";
   var postFile = "_posts/" + dateYear + "-" + dateMonth + "/" + fileName + ".md";
   var link = "http://www.copywritingforhealthcare.com/blogs/" + linkedDate + "/" + linkedTitle + ".html";
 
@@ -38,7 +38,7 @@ var formatFrontMatter = function(title, date) {
     newline, "title: ", title,
     newline, "date: ", date,
     newline, "categories: blogs",
-    newline, "image: ", imageFile,
+    newline, "image: /", imageFile,
     newline, "---",
     newline, newline, "meta:",
     "{",
